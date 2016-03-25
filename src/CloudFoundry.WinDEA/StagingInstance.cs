@@ -441,6 +441,15 @@ namespace CloudFoundry.WinDEA
                     return info.defaultProcessType.Web;
                 }
             }
+
+            if (info.defaultProcessTypes != null)
+            {
+                if (info.defaultProcessTypes.ContainsKey("web"))
+                {
+                    return info.defaultProcessTypes["web"];
+                }
+            }
+
             throw new Exception("Please specify a web start command in your manifest.yml");
         }
 

@@ -138,8 +138,13 @@
 
     public class ReleaseInfo
     {
+        [Obsolete("'default_process_type' key is deprecated, please use 'default_process_types' key (note the s at the end)")]
         [YamlAlias("default_process_type")]
         public DefaultProcessType defaultProcessType { get; set; }
+
+        [YamlAlias("default_process_types")]
+        public Dictionary<string, string> defaultProcessTypes { get; set; }
+
     }
 
     public class DefaultProcessType
